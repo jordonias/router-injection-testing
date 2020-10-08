@@ -9,8 +9,14 @@ import { FooComponent } from './foo.component/foo.component';
 import { HomeComponent } from './home.component/home.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FeatureRoutingModule, FormsModule, ],
-  declarations: [ BarComponent, FeatureComponent, FooComponent, HomeComponent ],
+  imports:      [ BrowserModule, FormsModule, ],
+  declarations: [ BarComponent, FooComponent, HomeComponent ],
+})
+export class PublicModule { }
+
+@NgModule({
+  imports:      [ FeatureRoutingModule, PublicModule ],
+  declarations: [ FeatureComponent ],
   bootstrap:    [ FeatureComponent ]
 })
 export class FeatureModule { }
